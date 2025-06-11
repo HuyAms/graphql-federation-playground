@@ -1,0 +1,6 @@
+# overriding subgraph for local development
+federation_version: =2.7.0
+subgraphs:
+  locations:
+    schema:
+      subgraph_url: http://localhost:4001
