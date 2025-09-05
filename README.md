@@ -29,6 +29,7 @@ type Location {
   name: String!
   description: String!
   photo: String!
+  weather: String! // field resolver
   👉 reviewsForLocation: [Review]! //review
   👉 overallRating: Float //review
 }

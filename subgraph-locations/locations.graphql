@@ -1,5 +1,16 @@
 extend schema @link(url: "https://specs.apollo.dev/federation/v2.7", import: ["@key"])
 
+enum CacheControlScope {
+  PUBLIC
+  PRIVATE
+}
+
+directive @cacheControl(
+  maxAge: Int
+  scope: CacheControlScope
+  inheritMaxAge: Boolean
+) on FIELD_DEFINITION | OBJECT | INTERFACE | UNION
+
 type Query {
   "The full list of locations presented by the Interplanetary Space Tourism department"
   locations: [Location!]!
@@ -15,4 +26,5 @@ type Location @key(fields: "id") {
   description: String!
   "The location's main photo as a URL"
   photo: String!
+  weather: String! @cacheControl(maxAge: 200)
 }

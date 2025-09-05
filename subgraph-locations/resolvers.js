@@ -11,6 +11,9 @@ const resolvers = {
     __resolveReference: ({ id }, { dataSources }) => {
       return dataSources.locationsAPI.getLocation(id);
     },
+    weather: ({id}, __, { dataSources }) => {
+      return dataSources.locationsAPI.getWeather(id);
+    },
   },
 };
 
