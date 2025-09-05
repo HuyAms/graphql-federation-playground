@@ -162,8 +162,7 @@ rover subgraph introspect http://localhost:4002 \
 Composes all subgraphs defined in the `supergraph-config`
 
 ```sh
-rover dev --supergraph-config ./router/supergraph-config.yaml \
-   --router-config ./router/router-config.yaml
+APOLLO_KEY= APOLLO_GRAPH_REF= rover dev --supergraph-config ./router/supergraph-config.yaml --router-config ./router/router-config.yaml
 ```
 
 Starting a session from a GraphOS Studio variant
@@ -345,4 +344,8 @@ query GetLatestReviews {
 - [Contribute to Entity](https://www.apollographql.com/tutorials/voyage-part1/13-contributing-to-an-entity)
 - [Reference entity](https://www.apollographql.com/tutorials/voyage-part1/12-referencing-an-entity)
 
-# Directives
+# Entity Caching
+
+### 📚 Resources
+
+- [Entity Caching](https://www.apollographql.com/docs/graphos/routing/performance/caching/entity)
